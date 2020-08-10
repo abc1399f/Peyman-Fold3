@@ -834,7 +834,7 @@ def evaluate(model, predict_dataloader, batch_size, epoch_th, dataset_name):
                
             sort_dictionary=sorted(dictionary, key=lambda tup: tup[0] )
             #num=int(0.025*len(confidence))
-            num=507
+            num=546
             count=0
             print("len confidence",len(confidence))
             print("numbbbber is :",num)
