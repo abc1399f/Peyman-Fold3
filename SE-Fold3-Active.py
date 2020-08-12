@@ -799,7 +799,7 @@ def evaluate(model, predict_dataloader, batch_size, epoch_th, dataset_name):
                 
                         
                       else:
-                          #print(value[i])
+                          print(value[i][j])
                           #print(value[i][j].item())
                           if value[i][j].item() > 0:
                             #print("miniiii",sigma)
