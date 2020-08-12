@@ -783,9 +783,22 @@ def evaluate(model, predict_dataloader, batch_size, epoch_th, dataset_name):
             valid_label_ids = torch.masked_select(label_ids, predict_mask)
             all_preds.extend(valid_predicted.tolist())
             all_labels.extend(valid_label_ids.tolist())
+            count=0
             for i in range(len(value)):
+                #print(type(value[i][0]))
+                #print(predicted_label_seq_ids[i])
+                #print(value[i][0])
                 
-                confidence.append(value[i][0]-value[i][1])
+                if value[i][0].size() == torch.Size([3]):
+                  count=count+1
+                  print("3",count)
+                if value[i][0].size() == torch.Size([2]):
+                  count=count+1
+                  print("2",count)
+                else:
+                  
+                  confidence.append(value[i][0]-value[i][1])
+
             # print(len(valid_label_ids),len(valid_predicted),len(valid_label_ids)==len(valid_predicted))
             total += len(valid_label_ids)
             correct += valid_predicted.eq(valid_label_ids).sum().item()
