@@ -790,10 +790,10 @@ def evaluate(model, predict_dataloader, batch_size, epoch_th, dataset_name):
                     sigma=0
                 
                     for j in range(len(value[i])):
-                      if value[i][j].size() == torch.Size([3]):
-                        count=count+1
-                        print("3",count)
                       if value[i][j].size() == torch.Size([18]):
+                        count=count+1
+                        print("18",count)
+                      if value[i][j].size() == torch.Size([16]):
                         count=count+1
                         print("16",count)
                 
