@@ -351,46 +351,47 @@ def f1_score_report(y_true, y_pred, _id):
     
 def report(y_true, y_pred):
     '''
-    list= [ 'X', '[CLS]', '[SEP]', 'O', 'I-loc', 'B-pers', 'I-pers', 'I-org', 'I-pro', 'B-pro','I-fac','B-fac', 'B-loc', 'B-org', 'B-event', 'I-event']
+    list=  [ 'X', '[CLS]', '[SEP]', 'O', 'I_LOC', 'B_LOC', 'B_PER', 'I_PER', 'I_ORG', 'B_ORG','I_TIM','B_TIM', 'B_DAT', 'I_DAT', 'B_MON', 'I_MON', 'B_PCT', 'I_PCT']
+        self._num_labels = len(self._label_types)
     '''
     
     p, r, f= f1_score_report(y_true, y_pred, 4)
     print("precision, recall, F1 for I-loc", p, r, f)
 
 
-    p, r, f= f1_score_report(y_true, y_pred, 12)
+    p, r, f= f1_score_report(y_true, y_pred, 5)
     print("precision, recall, F1 for B-loc", p, r, f)     
 
         
-    p, r, f= f1_score_report(y_true, y_pred, 5)
+    p, r, f= f1_score_report(y_true, y_pred, 6)
     print("precision, recall, F1 for B-pers", p, r, f)
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 6)
+    p, r, f= f1_score_report(y_true, y_pred, 7)
     print("precision, recall, F1 for I-pers", p, r, f)
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 7)
+    p, r, f= f1_score_report(y_true, y_pred, 8)
     print("precision, recall, F1 for I-org", p, r, f)
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 13)
+    p, r, f= f1_score_report(y_true, y_pred, 9)
     print("precision, recall, F1 for B-org", p, r, f)
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 8)
+    p, r, f= f1_score_report(y_true, y_pred, 10)
     print("precision, recall, F1 for I-pro", p, r, f)
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 9)
+    p, r, f= f1_score_report(y_true, y_pred, 11)
     print("precision, recall, F1 for B-pro", p, r, f) 
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 10)
+    p, r, f= f1_score_report(y_true, y_pred, 12)
     print("precision, recall, F1 for I-fac", p, r, f)
 
     
-    p, r, f= f1_score_report(y_true, y_pred, 11)
+    p, r, f= f1_score_report(y_true, y_pred, 13)
     print("precision, recall, F1 for B-fac", p, r, f)   
 
  
@@ -401,7 +402,14 @@ def report(y_true, y_pred):
     
     p, r, f= f1_score_report(y_true, y_pred, 15)
     print("precision, recall, F1 for I-event", p, r, f)  
-
+    
+    
+    p, r, f= f1_score_report(y_true, y_pred, 16)
+    print("precision, recall, F1 for I-event", p, r, f)  
+    
+    
+    p, r, f= f1_score_report(y_true, y_pred, 17)
+    print("precision, recall, F1 for I-event", p, r, f)  
     
 def f1_score(y_true, y_pred):
     '''
@@ -873,7 +881,7 @@ def evaluate(model, predict_dataloader, batch_size, epoch_th, dataset_name):
     #print(all_preds)
     all_labels_convert=[]
     all_preds_convert=[]
-    #label_list = [ 'X', '[CLS]', '[SEP]', 'O', 'I-loc', 'B-pers', 'I-pers', 'I-org', 'I-pro', 'B-pro','I-fac','B-fac', 'B-loc', 'B-org', 'B-event', 'I-event']
+    #label_list =
     #label_map = {i : label for i, label in enumerate(label_list)}
     #for j in range (len(all_labels)):
      #   all_labels_convert.append(label_map[all_labels[j]])
